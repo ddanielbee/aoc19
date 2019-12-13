@@ -1,0 +1,85 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: cac08aff62187d997a22ad9064814a2e7ebf87774d7cd58253499d600786c7a6
+
+name:           aoc19
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/ddanielbee/aoc19#readme>
+homepage:       https://github.com/githubuser/aoc19#readme
+bug-reports:    https://github.com/githubuser/aoc19/issues
+author:         Daniel Bolívar
+maintainer:     example@example.com
+copyright:      2019 Daniel Bolívar
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/aoc19
+
+library
+  exposed-modules:
+      DayOne
+      Lib
+  other-modules:
+      Paths_aoc19
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -fno-warn-orphans -fwarn-unused-imports -fwarn-unused-binds -isrc -Widentities
+  build-depends:
+      base >=4.7 && <5
+    , hspec
+    , ilist
+    , parsec
+    , safe
+    , split
+    , transformers
+    , vector
+  default-language: Haskell2010
+
+executable aoc19-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_aoc19
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -fno-warn-orphans -fwarn-unused-imports -fwarn-unused-binds -isrc -Widentities -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoc19
+    , base >=4.7 && <5
+    , hspec
+    , ilist
+    , parsec
+    , safe
+    , split
+    , transformers
+    , vector
+  default-language: Haskell2010
+
+test-suite aoc19-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      DayOneSpec
+      Paths_aoc19
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -fno-warn-orphans -fwarn-unused-imports -fwarn-unused-binds -isrc -Widentities -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoc19
+    , base >=4.7 && <5
+    , hspec
+    , ilist
+    , parsec
+    , safe
+    , split
+    , transformers
+    , vector
+  default-language: Haskell2010
