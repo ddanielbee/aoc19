@@ -3,7 +3,7 @@ module Lib ( mainFunc ) where
   import DayOne
 
   mainFunc :: IO ()
-  mainFunc = runDay1 calculateRequiredFuel
+  mainFunc = runDay1 calculateRequiredFuelForMassAndFuel
   
   runDay1 :: Show a => ([Int] -> a) -> IO ()
   runDay1 fn = do 
