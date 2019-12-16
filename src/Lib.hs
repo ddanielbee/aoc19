@@ -16,4 +16,4 @@ module Lib ( mainFunc ) where
   runDay2 :: Show a => ([Int] -> a) -> IO ()
   runDay2 fn = do
                 content <- readFile "data/day2.txt"
-                print $ fn $ fmap (read::String->Int) (splitOn "," content)
+                print $ fn $ read <$> splitOn "," content
