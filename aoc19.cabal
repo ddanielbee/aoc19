@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cac08aff62187d997a22ad9064814a2e7ebf87774d7cd58253499d600786c7a6
+-- hash: 32b6c44937ad56adf2438b98a6c64343c141b7756e2043285e063526f85276e7
 
 name:           aoc19
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 library
   exposed-modules:
       DayOne
+      DayTwo
       Lib
   other-modules:
       Paths_aoc19
@@ -68,6 +69,7 @@ test-suite aoc19-test
   main-is: Spec.hs
   other-modules:
       DayOneSpec
+      DayTwoSpec
       Paths_aoc19
   hs-source-dirs:
       test
