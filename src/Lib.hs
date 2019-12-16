@@ -6,7 +6,7 @@ module Lib ( mainFunc ) where
 
 
   mainFunc :: IO ()
-  mainFunc = sequence_ [ runDay1 calculateRequiredFuelForMassAndFuel, runDay2 compute ]
+  mainFunc = sequence_ [ runDay1 calculateRequiredFuelForMassAndFuel, runDay2 compute, runDay2 findValuesApplied ]
 
   runDay1 :: Show a => ([Int] -> a) -> IO ()
   runDay1 fn = do 

@@ -2,6 +2,7 @@ module DayTwo where
 
   import           Data.List.Index                ( setAt )
   import           Safe                           ( atMay )
+  import Control.Applicative
 
   data OpCode = Add Int Int Int | Multiply Int Int Int | Finish deriving (Eq)
 
@@ -39,3 +40,24 @@ module DayTwo where
         Left _ -> Left "Error somewhere"
       Right Finish -> Right intCodes
       _ -> Left "Error somewhere"
+
+  magicNumber :: Int
+  magicNumber = 19690720
+
+  possibilities :: [(Int, Int)]
+  possibilities = liftA2 (,) [0 .. 99] [0 .. 99]
+
+  replaceInitialValues :: Int -> Int -> [Int] -> [Int]
+  replaceInitialValues first second = setAt 1 first . setAt 2 second
+
+  findValues :: Int -> [(Int, Int)] -> [Int] -> Maybe (Int, Int)
+  findValues valueToFind ((first, second) : rest) input =
+    case computeOpCode (replaceInitialValues first second input) 0 of 
+      Right intCodes ->  if head intCodes == valueToFind 
+                         then Just (first, second)
+                         else findValues valueToFind rest input
+      Left _ -> Nothing
+  findValues _ [] _ = Nothing
+
+  findValuesApplied :: [Int] -> Maybe (Int, Int)
+  findValuesApplied = findValues magicNumber possibilities
